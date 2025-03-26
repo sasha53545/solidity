@@ -26,8 +26,8 @@ contract SimpleWallet {
         require(msg.sender == owner, "Only the owner can withdraw");
         require(address(this).balance >= amount, "Insufficient balance in the wallet");
 
-        payable(owner).transfer(amount); // Переводим ETH владельцу
-        emit Withdrawn(owner, amount); // Логируем снятие
+        payable(owner).transfer(amount);
+        emit Withdrawn(owner, amount);
     }
 
     function getBalance() public view returns (uint256) {
