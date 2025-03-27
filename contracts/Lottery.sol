@@ -30,7 +30,7 @@ contract Lottery {
         (bool success, ) = payable(winner).call{value: address(this).balance}("");
         require(success, "Transfer failed");
 
-        participants = new address[];
+//        participants = new address[];
     }
 
     function random() private view returns (uint) {
